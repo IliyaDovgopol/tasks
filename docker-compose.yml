@@ -8,8 +8,8 @@ services:
       - ./logs:/var/log
     working_dir: /app
     ports:
-      - "8080:80"  # Для доступу з браузера
-      - "9007:9007"  # Маппінг: 9001 на хості, 9002 в контейнері для Xdebug
+      - "8080:80"
+      - "9007:9007"
     environment:
       - APACHE_DOCUMENT_ROOT=/app
 
@@ -22,4 +22,4 @@ services:
       MYSQL_USER: user
       MYSQL_PASSWORD: password
     ports:
-      - "3306:3306"  # Порт для доступу до MySQL
+      - "3306:3306"

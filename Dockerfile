@@ -1,25 +1,25 @@
-# Використовуємо офіційний образ PHP з Apache
+# Use the official PHP image with Apache
 FROM php:8.1-apache
 
-# Встановлюємо Xdebug
+# Install Xdebug
 RUN pecl install xdebug \
 && docker-php-ext-enable xdebug
 
-# Встановлюємо залежності для MySQL
+# Install dependencies for MySQL
 RUN docker-php-ext-install pdo_mysql
 
-# Встановлюємо робочу директорію
+# Set the working directory
 WORKDIR /app
 
-# Копіюємо ваш проект у контейнер
+# Copy your project into the container
 COPY . /app
 
-# Налаштування Apache для роботи з вашим додатком
+# Configure Apache to work with your app
 RUN a2enmod rewrite
 COPY ./apache-config.conf /etc/apache2/sites-available/000-default.conf
 
-# Додаємо конфігурацію для Xdebug
+# Add configuration for Xdebug
 COPY ./xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
 
-# Команда за замовчуванням — запуск Apache
+# Default command to run Apache
 CMD ["apache2-foreground"]

@@ -5,7 +5,7 @@
             "name": "Listen for Xdebug in Docker",
             "type": "php",
             "request": "launch",
-            "port": 9005,  // VSCode слухає на порту 9001, мапимо на 9002
+            "port": 9005,
             "pathMappings": {
                 "/app/php": "C:/Projects/tasks/php"
             }
