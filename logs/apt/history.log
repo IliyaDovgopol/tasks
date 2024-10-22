@@ -1,0 +1,5 @@
+
+Start-Date: 2024-10-18  14:34:17
+Commandline: apt install iputils-ping
+Install: iputils-ping:amd64 (3:20221126-1), libcap2-bin:amd64 (1:2.66-4, automatic), libpam-cap:amd64 (1:2.66-4, automatic)
+End-Date: 2024-10-18  14:34:18
